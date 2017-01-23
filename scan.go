@@ -68,7 +68,7 @@ func AvScan(path string, timeout int) Comodo {
 // ParseComodoOutput convert comodo output into ResultsData struct
 func ParseComodoOutput(comodoout string) ResultsData {
 
-	comodo := ResultsData{Infected: false, Engine: "1.1"}
+	comodo := ResultsData{Infected: false, Engine: "1.1", Updated: getUpdatedDate()}
 
 	log.Debug("comodoout: ", comodoout)
 
@@ -93,7 +93,6 @@ func ParseComodoOutput(comodoout string) ResultsData {
 			os.Exit(2)
 		}
 	}
-	comodo.Updated = getUpdatedDate()
 
 	return comodo
 }
