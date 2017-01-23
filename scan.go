@@ -68,6 +68,9 @@ func AvScan(path string, timeout int) Comodo {
 func ParseComodoOutput(comodoout string) ResultsData {
 
 	comodo := ResultsData{Infected: false, Engine: "1.1"}
+
+	log.Debug("comodoout: ", comodoout)
+
 	// EXAMPLE OUTPUT:
 	// -----== Scan Start ==-----
 	// /malware/EICAR ---> Found Virus, Malware Name is Malware
