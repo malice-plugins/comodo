@@ -7,7 +7,7 @@ This repository contains a **Dockerfile** of [comodo](https://www.comodo.com) fo
 
 ### Dependencies
 
--	[debian:jessie (*125 MB*\)](https://index.docker.io/_/debian/)
+-	[ubuntu:precise (*104 MB*\)](https://hub.docker.com/_/ubuntu/)
 
 ### Installation
 

@@ -56,7 +56,7 @@ func AvScan(path string, timeout int) Comodo {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(timeout)*time.Second)
 	defer cancel()
 
-	output, err := utils.RunCommand(ctx, "/usr/bin/avgscan", path)
+	output, err := utils.RunCommand(ctx, "/opt/COMODO/cmdscan", "-vs", path)
 	utils.Assert(err)
 
 	return Comodo{
@@ -255,7 +255,7 @@ func main() {
 		},
 		{
 			Name:  "web",
-			Usage: "Create a AVG scan web service",
+			Usage: "Create a Comodo scan web service",
 			Action: func(c *cli.Context) error {
 				webService()
 				return nil
