@@ -18,7 +18,7 @@ func extractVirusName(line string) string {
 	return strings.TrimSpace(keyvalue[1])
 }
 
-func parseComodoOutput(comodoout string) (string, error) {
+func parseComodoTestOutput(comodoout string) (string, error) {
 
 	lines := strings.Split(comodoout, "\n")
 
@@ -39,7 +39,7 @@ func parseComodoOutput(comodoout string) (string, error) {
 // TestParseResult tests the ParseFSecureOutput function.
 func TestParseResult(t *testing.T) {
 
-	results, err := parseComodoOutput(resultString)
+	results, err := parseComodoTestOutput(resultString)
 
 	if err != nil {
 		t.Log(err)

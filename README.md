@@ -45,7 +45,7 @@ Options:
 
 Commands:
   update	Update virus definitions
-  web       Create a AVG scan web service  
+  web       Create a Comodo scan web service  
   help		Shows a list of commands or help for one command
 
 Run 'comodo COMMAND --help' for more information on a command.
@@ -58,13 +58,12 @@ Sample Output
 
 ```json
 {
-    "comodo": {
-        "infected": true,
-        "result": "Virus identified EICAR_Test",              
-        "engine": "13.0.3114",
-        "database": "4477/13807",        
-        "updated": "20170121"
-    }
+  "comodo": {
+    "infected": true,
+    "result": "Malware",
+    "engine": "1.1",
+    "updated": "20170122"
+  }
 }
 ```
 
@@ -72,11 +71,11 @@ Sample Output
 
 ---
 
-#### AVG
+#### Comodo
 
-| Infected | Result                      | Engine    | Updated  |
-|----------|-----------------------------|-----------|----------|
-| true     | Virus identified EICAR_Test | 13.0.3114 | 20170122 |
+| Infected | Result  | Engine    | Updated  |
+|----------|---------|-----------|----------|
+| true     | Malware | 13.0.3114 | 20170122 |
 
 ---
 
@@ -84,7 +83,7 @@ Documentation
 -------------
 
 -	[To write results to ElasticSearch](https://github.com/maliceio/malice-comodo/blob/master/docs/elasticsearch.md)
--	[To create a AVG scan micro-service](https://github.com/maliceio/malice-comodo/blob/master/docs/web.md)
+-	[To create a Comodo scan micro-service](https://github.com/maliceio/malice-comodo/blob/master/docs/web.md)
 -	[To post results to a webhook](https://github.com/maliceio/malice-comodo/blob/master/docs/callback.md)
 -	[To update the AV definitions](https://github.com/maliceio/malice-comodo/blob/master/docs/update.md)
 
