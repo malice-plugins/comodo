@@ -2,7 +2,7 @@ FROM ubuntu:precise
 
 LABEL maintainer "https://github.com/blacktop"
 
-ENV GO_VERSION 1.7.4
+ENV GO_VERSION 1.7.5
 
 COPY . /go/src/github.com/maliceio/malice-comodo
 RUN buildDeps='ca-certificates \
@@ -14,7 +14,6 @@ RUN buildDeps='ca-certificates \
                wget' \
   && apt-get update -qq \
   && apt-get install -yq $buildDeps \
-  && set -x \
   && echo "===> Install Comodo..." \
   && cd /tmp \
   && wget http://download.comodo.com/cavmgl/download/installs/1000/standalone/cav-linux_1.1.268025-1_amd64.deb \
@@ -45,5 +44,4 @@ ADD http://www.eicar.org/download/eicar.com.txt /malware/EICAR
 WORKDIR /malware
 
 ENTRYPOINT ["/bin/avscan"]
-
 CMD ["--help"]
