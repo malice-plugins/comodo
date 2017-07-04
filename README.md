@@ -1,13 +1,13 @@
 malice-comodo
 =============
 
-[![Circle CI](https://circleci.com/gh/maliceio/malice-comodo.png?style=shield)](https://circleci.com/gh/maliceio/malice-comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker image-609 MB-blue.svg)](https://hub.docker.com/r/malice/comodo/)
+[![Circle CI](https://circleci.com/gh/malice-plugins/comodo.png?style=shield)](https://circleci.com/gh/malice-plugins/comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker image-609 MB-blue.svg)](https://hub.docker.com/r/malice/comodo/)
 
 This repository contains a **Dockerfile** of [comodo](https://www.comodo.com) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/malice/comodo/) published to the public [DockerHub](https://index.docker.io/).
 
 ### Dependencies
 
--	[ubuntu:precise (*104 MB*\)](https://hub.docker.com/_/ubuntu/)
+-	[ubuntu:xenial (*118 MB*\)](https://store.docker.com/images/ubuntu)
 
 ### Installation
 
@@ -82,24 +82,24 @@ Sample Output
 Documentation
 -------------
 
--	[To write results to ElasticSearch](https://github.com/maliceio/malice-comodo/blob/master/docs/elasticsearch.md)
--	[To create a Comodo scan micro-service](https://github.com/maliceio/malice-comodo/blob/master/docs/web.md)
--	[To post results to a webhook](https://github.com/maliceio/malice-comodo/blob/master/docs/callback.md)
--	[To update the AV definitions](https://github.com/maliceio/malice-comodo/blob/master/docs/update.md)
+-	[To write results to ElasticSearch](https://github.com/malice-plugins/comodo/blob/master/docs/elasticsearch.md)
+-	[To create a Comodo scan micro-service](https://github.com/malice-plugins/comodo/blob/master/docs/web.md)
+-	[To post results to a webhook](https://github.com/malice-plugins/comodo/blob/master/docs/callback.md)
+-	[To update the AV definitions](https://github.com/malice-plugins/comodo/blob/master/docs/update.md)
 
 ### Issues
 
-Find a bug? Want more features? Find something missing in the documentation? Let me know! Please don't hesitate to [file an issue](https://github.com/maliceio/malice-comodo/issues/new).
+Find a bug? Want more features? Find something missing in the documentation? Let me know! Please don't hesitate to [file an issue](https://github.com/malice-plugins/comodo/issues/new).
 
 ### CHANGELOG
 
-See [`CHANGELOG.md`](https://github.com/maliceio/malice-comodo/blob/master/CHANGELOG.md)
+See [`CHANGELOG.md`](https://github.com/malice-plugins/comodo/blob/master/CHANGELOG.md)
 
 ### Contributing
 
-[See all contributors on GitHub](https://github.com/maliceio/malice-comodo/graphs/contributors).
+[See all contributors on GitHub](https://github.com/malice-plugins/comodo/graphs/contributors).
 
-Please update the [CHANGELOG.md](https://github.com/maliceio/malice-comodo/blob/master/CHANGELOG.md) and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
+Please update the [CHANGELOG.md](https://github.com/malice-plugins/comodo/blob/master/CHANGELOG.md) and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
 
 ### License
 

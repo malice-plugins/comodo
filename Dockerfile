@@ -1,10 +1,15 @@
-FROM ubuntu:precise
+FROM ubuntu:xenial
 
 LABEL maintainer "https://github.com/blacktop"
 
-ENV GO_VERSION 1.7.5
+LABEL malice.plugin.repository = "https://github.com/malice-plugins/comodo.git"
+LABEL malice.plugin.category="av"
+LABEL malice.plugin.mime="*"
+LABEL malice.plugin.docker.engine="*"
 
-COPY . /go/src/github.com/maliceio/malice-comodo
+ENV GO_VERSION 1.8.3
+
+COPY . /go/src/github.com/malice-plugins/comodo
 RUN buildDeps='ca-certificates \
                build-essential \
                gdebi-core \
@@ -25,7 +30,7 @@ RUN buildDeps='ca-certificates \
   && tar -C /usr/local -xzf /tmp/go.tar.gz \
   && export PATH=$PATH:/usr/local/go/bin \
   && echo "===> Building avscan Go binary..." \
-  && cd /go/src/github.com/maliceio/malice-comodo \
+  && cd /go/src/github.com/malice-plugins/comodo \
   && export GOPATH=/go \
   && go version \
   && go get \
