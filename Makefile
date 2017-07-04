@@ -29,9 +29,9 @@ gotest:
 
 avtest:
 	@echo "===> Comodo Version"
-	@docker run --init --rm --entrypoint=bash $(ORG)/$(NAME):$(VERSION) -c "/opt/sophos/bin/savscan --version" > tests/av_version.out
+	@docker run --init --rm --entrypoint=bash $(ORG)/$(NAME):$(VERSION) -c "/opt/COMODO/cmdscan -h" > tests/av_version.out
 	@echo "===> Comodo EICAR Test"
-	@docker run --init --rm --entrypoint=bash $(ORG)/$(NAME):$(VERSION) -c "/opt/sophos/bin/savscan -f -ss EICAR" > tests/av_scan.out || true
+	@docker run --init --rm --entrypoint=bash $(ORG)/$(NAME):$(VERSION) -c "/opt/COMODO/cmdscan -vs /malware/EICAR" > tests/av_scan.out || true
 
 test:
 	docker run --init -d --name elasticsearch -p 9200:9200 blacktop/elasticsearch

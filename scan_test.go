@@ -17,7 +17,7 @@ func TestParseResult(t *testing.T) {
 	results := ParseComodoOutput(string(r))
 
 	if true {
-		t.Log("results: ", results)
+		t.Log("results: ", results.Result)
 	}
 
 }

@@ -1,0 +1,35 @@
+{
+  "took": 61,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "malice",
+        "_type": "samples",
+        "_id": "AV0PIp5dHhGg9444Ozz9",
+        "_score": 1,
+        "_source": {
+          "plugins": {
+            "av": {
+              "comodo": {
+                "engine": "1.1",
+                "infected": true,
+                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Malware | 1.1 | 20170704 |\n",
+                "result": "Malware",
+                "updated": "20170704"
+              }
+            }
+          },
+          "scan_date": "2017-07-04T19:45:13.301874576Z"
+        }
+      }
+    ]
+  }
+}
