@@ -7,9 +7,6 @@ LABEL malice.plugin.category="av"
 LABEL malice.plugin.mime="*"
 LABEL malice.plugin.docker.engine="*"
 
-ENV GO_VERSION 1.8.3
-
-COPY . /go/src/github.com/malice-plugins/comodo
 RUN buildDeps='ca-certificates \
                build-essential \
                gdebi-core \
@@ -24,6 +21,23 @@ RUN buildDeps='ca-certificates \
   && wget http://download.comodo.com/cavmgl/download/installs/1000/standalone/cav-linux_1.1.268025-1_amd64.deb \
   && DEBIAN_FRONTEND=noninteractive gdebi -n cav-linux_1.1.268025-1_amd64.deb \
   && DEBIAN_FRONTEND=noninteractive /opt/COMODO/post_setup.sh \
+  && echo "===> Clean up unnecessary files..." \
+  && apt-get purge -y --auto-remove $buildDeps \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /go /usr/local/go
+
+ENV GO_VERSION 1.8.3
+
+COPY . /go/src/github.com/malice-plugins/comodo
+RUN buildDeps='ca-certificates \
+               build-essential \
+               gdebi-core \
+               libssl-dev \
+               mercurial \
+               git-core \
+               wget' \
+  && apt-get update -qq \
+  && apt-get install -yq $buildDeps \
   && echo "===> Install Go..." \
   && ARCH="$(dpkg --print-architecture)" \
   && wget https://storage.googleapis.com/golang/go$GO_VERSION.linux-$ARCH.tar.gz -O /tmp/go.tar.gz \
