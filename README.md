@@ -7,7 +7,7 @@ This repository contains a **Dockerfile** of [comodo](https://www.comodo.com) fo
 
 ### Dependencies
 
--	[ubuntu:xenial (*118 MB*\)](https://store.docker.com/images/ubuntu)
+-	[ubuntu:precise (*104 MB*\)](https://store.docker.com/images/ubuntu)
 
 ### Installation
 
