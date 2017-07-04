@@ -1,7 +1,7 @@
 malice-comodo
 =============
 
-[![Circle CI](https://circleci.com/gh/malice-plugins/comodo.png?style=shield)](https://circleci.com/gh/malice-plugins/comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker image-609 MB-blue.svg)](https://hub.docker.com/r/malice/comodo/)
+[![Circle CI](https://circleci.com/gh/malice-plugins/comodo.png?style=shield)](https://circleci.com/gh/malice-plugins/comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker%20image-609-blue.svg)](https://hub.docker.com/r/malice/comodo/)
 
 This repository contains a **Dockerfile** of [comodo](https://www.comodo.com) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/malice/comodo/) published to the public [DockerHub](https://index.docker.io/).
 
@@ -67,7 +67,7 @@ Sample Output
 }
 ```
 
-### STDOUT (Markdown Table):
+### Markdown:
 
 ---
 
