@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -17,7 +19,6 @@ import (
 	"github.com/levigross/grequests"
 	"github.com/maliceio/go-plugin-utils/database/elasticsearch"
 	"github.com/maliceio/go-plugin-utils/utils"
-	"github.com/maliceio/malice/utils/clitable"
 	"github.com/parnurzeal/gorequest"
 	"github.com/urfave/cli"
 )
@@ -49,6 +50,7 @@ type ResultsData struct {
 	Result   string `json:"result" structs:"result"`
 	Engine   string `json:"engine" structs:"engine"`
 	Updated  string `json:"updated" structs:"updated"`
+	MarkDown string `json:"markdown,omitempty" structs:"markdown,omitempty"`
 }
 
 // AvScan performs antivirus scan
@@ -138,18 +140,17 @@ func parseUpdatedDate(date string) string {
 	return fmt.Sprintf("%d%02d%02d", t.Year(), t.Month(), t.Day())
 }
 
-func printMarkDownTable(comodo Comodo) {
+func generateMarkDownTable(c Comodo) string {
+	var tplOut bytes.Buffer
 
-	fmt.Println("#### Comodo")
-	table := clitable.New([]string{"Infected", "Result", "Engine", "Updated"})
-	table.AddRow(map[string]interface{}{
-		"Infected": comodo.Results.Infected,
-		"Result":   comodo.Results.Result,
-		"Engine":   comodo.Results.Engine,
-		"Updated":  comodo.Results.Updated,
-	})
-	table.Markdown = true
-	table.Print()
+	t := template.Must(template.New("comodo").Parse(tpl))
+
+	err := t.Execute(&tplOut, c)
+	if err != nil {
+		log.Println("executing template:", err)
+	}
+
+	return tplOut.String()
 }
 
 func printStatus(resp gorequest.Response, body string, errs []error) {
@@ -183,6 +184,7 @@ func webAvScan(w http.ResponseWriter, r *http.Request) {
 	defer os.Remove(tmpfile.Name()) // clean up
 
 	data, err := ioutil.ReadAll(file)
+	utils.Assert(err)
 
 	if _, err = tmpfile.Write(data); err != nil {
 		log.Fatal(err)
@@ -280,6 +282,7 @@ func main() {
 			}
 
 			comodo := AvScan(path, c.Int("timeout"))
+			comodo.Results.MarkDown = generateMarkDownTable(comodo)
 
 			// upsert into Database
 			elasticsearch.InitElasticSearch(elastic)
@@ -291,8 +294,9 @@ func main() {
 			})
 
 			if c.Bool("table") {
-				printMarkDownTable(comodo)
+				fmt.Println(comodo.Results.MarkDown)
 			} else {
+				comodo.Results.MarkDown = ""
 				avgJSON, err := json.Marshal(comodo)
 				utils.Assert(err)
 				if c.Bool("callback") {

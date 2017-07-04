@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:precise
 
 LABEL maintainer "https://github.com/blacktop"
 
@@ -18,8 +18,8 @@ RUN buildDeps='ca-certificates \
   && apt-get install -yq $buildDeps \
   && echo "===> Install Comodo..." \
   && cd /tmp \
-  && wget http://download.comodo.com/cavmgl/download/installs/1000/standalone/cav-linux_1.1.268025-1_amd64.deb \
-  && DEBIAN_FRONTEND=noninteractive gdebi -n cav-linux_1.1.268025-1_amd64.deb \
+  && wget http://download.comodo.com/cis/download/installs/linux/cav-linux_x64.deb \
+  && DEBIAN_FRONTEND=noninteractive gdebi -n cav-linux_x64.deb \
   && DEBIAN_FRONTEND=noninteractive /opt/COMODO/post_setup.sh \
   && echo "===> Clean up unnecessary files..." \
   && apt-get purge -y --auto-remove $buildDeps \
