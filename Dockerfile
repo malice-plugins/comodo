@@ -55,6 +55,7 @@ RUN buildDeps='ca-certificates \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /go /usr/local/go
 
 # Update Comodo definitions
+RUN mkdir -p /opt/malice
 ADD http://download.comodo.com/av/updates58/sigs/bases/bases.cav /opt/COMODO/scanners/bases.cav
 
 # Add EICAR Test Virus File to malware folder

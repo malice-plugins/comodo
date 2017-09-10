@@ -1,4 +1,4 @@
-# Create a Comodo scan micro-service :new: :construction:
+# Create a Comodo scan micro-service
 
 ```bash
 $ docker run -d -p 3993:3993 malice/comodo web
