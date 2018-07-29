@@ -17,9 +17,11 @@ import (
 	"github.com/fatih/structs"
 	"github.com/gorilla/mux"
 	"github.com/levigross/grequests"
+	"github.com/malice-plugins/go-plugin-utils/database"
 	"github.com/malice-plugins/go-plugin-utils/database/elasticsearch"
 	"github.com/malice-plugins/go-plugin-utils/utils"
 	"github.com/parnurzeal/gorequest"
+	"github.com/pkg/errors"
 	"github.com/urfave/cli"
 )
 
@@ -206,7 +208,7 @@ func webAvScan(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	var elastic string
+	es := elasticsearch.Database{Index: "malice", Type: "samples"}
 
 	cli.AppHelpTemplate = utils.AppHelpTemplate
 	app := cli.NewApp()
@@ -227,7 +229,7 @@ func main() {
 			Value:       "",
 			Usage:       "elasitcsearch address for Malice to store results",
 			EnvVar:      "MALICE_ELASTICSEARCH",
-			Destination: &elastic,
+			Destination: &es.Host,
 		},
 		cli.BoolFlag{
 			Name:  "table, t",
@@ -285,13 +287,21 @@ func main() {
 			comodo.Results.MarkDown = generateMarkDownTable(comodo)
 
 			// upsert into Database
-			elasticsearch.InitElasticSearch(elastic)
-			elasticsearch.WritePluginResultsToDatabase(elasticsearch.PluginResults{
-				ID:       utils.Getopt("MALICE_SCANID", utils.GetSHA256(path)),
-				Name:     name,
-				Category: category,
-				Data:     structs.Map(comodo.Results),
-			})
+			if len(c.String("elasitcsearch")) > 0 {
+				err := es.Init()
+				if err != nil {
+					return errors.Wrap(err, "failed to initalize elasitcsearch")
+				}
+				err = es.StorePluginResults(database.PluginResults{
+					ID:       utils.Getopt("MALICE_SCANID", utils.GetSHA256(path)),
+					Name:     name,
+					Category: category,
+					Data:     structs.Map(comodo.Results),
+				})
+				if err != nil {
+					return errors.Wrapf(err, "failed to index malice/%s results", name)
+				}
+			}
 
 			if c.Bool("table") {
 				fmt.Println(comodo.Results.MarkDown)

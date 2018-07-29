@@ -8,12 +8,12 @@ LABEL malice.plugin.mime="*"
 LABEL malice.plugin.docker.engine="*"
 
 RUN buildDeps='ca-certificates \
-               build-essential \
-               gdebi-core \
-               libssl-dev \
-               mercurial \
-               git-core \
-               wget' \
+  build-essential \
+  gdebi-core \
+  libssl-dev \
+  mercurial \
+  git-core \
+  wget' \
   && apt-get update -qq \
   && apt-get install -yq $buildDeps \
   && echo "===> Install Comodo..." \
@@ -26,16 +26,16 @@ RUN buildDeps='ca-certificates \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /go /usr/local/go
 
-ENV GO_VERSION 1.8.3
+ENV GO_VERSION 1.10.3
 
 COPY . /go/src/github.com/malice-plugins/comodo
 RUN buildDeps='ca-certificates \
-               build-essential \
-               gdebi-core \
-               libssl-dev \
-               mercurial \
-               git-core \
-               wget' \
+  build-essential \
+  gdebi-core \
+  libssl-dev \
+  mercurial \
+  git-core \
+  wget' \
   && apt-get update -qq \
   && apt-get install -yq $buildDeps \
   && echo "===> Install Go..." \
@@ -48,7 +48,7 @@ RUN buildDeps='ca-certificates \
   && export GOPATH=/go \
   && go version \
   && go get \
-  && go build -ldflags "-X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/avscan \
+  && go build -ldflags "-s -w -X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/avscan \
   && echo "===> Clean up unnecessary files..." \
   && apt-get purge -y --auto-remove $buildDeps \
   && apt-get clean \

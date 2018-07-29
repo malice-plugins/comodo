@@ -1,19 +1,40 @@
 {
-  "took": 61,
+  "took": 12,
   "timed_out": false,
   "_shards": {
     "total": 1,
     "successful": 1,
+    "skipped": 0,
     "failed": 0
   },
   "hits": {
-    "total": 1,
+    "total": 2,
     "max_score": 1,
     "hits": [
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "AV0PIp5dHhGg9444Ozz9",
+        "_id": "3t1r5GQBxyE50vwVMcJK",
+        "_score": 1,
+        "_source": {
+          "plugins": {
+            "av": {
+              "windows-defender": {
+                "engine": "0.1.0",
+                "infected": true,
+                "markdown": "#### Windows Defender\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Backdoor:Win32/Lecna!dha | 0.1.0 | 20180729 |\n",
+                "result": "Backdoor:Win32/Lecna!dha",
+                "updated": "20180729"
+              }
+            }
+          },
+          "scan_date": "2018-07-29T05:03:07.582825175Z"
+        }
+      },
+      {
+        "_index": "malice",
+        "_type": "samples",
+        "_id": "391t5GQBxyE50vwVkcKa",
         "_score": 1,
         "_source": {
           "plugins": {
@@ -21,13 +42,13 @@
               "comodo": {
                 "engine": "1.1",
                 "infected": true,
-                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Malware | 1.1 | 20170704 |\n",
-                "result": "Malware",
-                "updated": "20170704"
+                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Backdoor.Win32.Lecna.AB | 1.1 | 20180729 |\n",
+                "result": "Backdoor.Win32.Lecna.AB",
+                "updated": "20180729"
               }
             }
           },
-          "scan_date": "2017-07-04T19:45:13.301874576Z"
+          "scan_date": "2018-07-29T05:05:43.321342221Z"
         }
       }
     ]

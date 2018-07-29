@@ -1,5 +1,6 @@
+null
 #### Comodo
 | Infected      | Result      | Engine      | Updated      |
 |:-------------:|:-----------:|:-----------:|:------------:|
-| true | Malware | 1.1 | 20170704 |
+| true | Backdoor.Win32.Lecna.AB | 1.1 | 20180729 |
 
