@@ -1,5 +1,5 @@
 {
-  "took": 12,
+  "took": 222,
   "timed_out": false,
   "_shards": {
     "total": 1,
@@ -8,33 +8,13 @@
     "failed": 0
   },
   "hits": {
-    "total": 2,
+    "total": 1,
     "max_score": 1,
     "hits": [
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "3t1r5GQBxyE50vwVMcJK",
-        "_score": 1,
-        "_source": {
-          "plugins": {
-            "av": {
-              "windows-defender": {
-                "engine": "0.1.0",
-                "infected": true,
-                "markdown": "#### Windows Defender\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Backdoor:Win32/Lecna!dha | 0.1.0 | 20180729 |\n",
-                "result": "Backdoor:Win32/Lecna!dha",
-                "updated": "20180729"
-              }
-            }
-          },
-          "scan_date": "2018-07-29T05:03:07.582825175Z"
-        }
-      },
-      {
-        "_index": "malice",
-        "_type": "samples",
-        "_id": "391t5GQBxyE50vwVkcKa",
+        "_id": "qNRv5GQBRcKEyoQW6VOd",
         "_score": 1,
         "_source": {
           "plugins": {
@@ -48,7 +28,7 @@
               }
             }
           },
-          "scan_date": "2018-07-29T05:05:43.321342221Z"
+          "scan_date": "2018-07-29T05:08:16.917729474Z"
         }
       }
     ]
