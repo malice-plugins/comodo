@@ -30,26 +30,27 @@ $ docker run --rm -v /path/to/malware:/malware:ro malice/comodo FILE
 
 Usage: comodo [OPTIONS] COMMAND [arg...]
 
-Malice Comodo AntiVirus Plugin
+Malice AVG AntiVirus Plugin
 
-Version: v0.1.0, BuildTime: 20170122
+Version: v0.1.0, BuildTime: 20180903
 
 Author:
   blacktop - <https://github.com/blacktop>
 
 Options:
-  --table, -t	       output as Markdown table
-  --callback, -c	    POST results to Malice webhook [$MALICE_ENDPOINT]
-  --proxy, -x	       proxy settings for Malice webhook endpoint [$MALICE_PROXY]
-  --timeout value       malice plugin timeout (in seconds) (default: 60) [$MALICE_TIMEOUT]
-  --elasitcsearch value elasitcsearch address for Malice to store results [$MALICE_ELASTICSEARCH]
-  --help, -h	        show help
-  --version, -v	     print the version
+  --verbose, -V          verbose output
+  --elasticsearch value  elasticsearch url for Malice to store results [$MALICE_ELASTICSEARCH_URL]
+  --table, -t            output as Markdown table
+  --callback, -c         POST results back to Malice webhook [$MALICE_ENDPOINT]
+  --proxy, -x            proxy settings for Malice webhook endpoint [$MALICE_PROXY]
+  --timeout value        malice plugin timeout (in seconds) (default: 60) [$MALICE_TIMEOUT]
+  --help, -h             show help
+  --version, -v          print the version
 
 Commands:
-  update	Update virus definitions
-  web       Create a Comodo scan web service
-  help		Shows a list of commands or help for one command
+  update  Update virus definitions
+  web     Create a Comodo scan web service
+  help    Shows a list of commands or help for one command
 
 Run 'comodo COMMAND --help' for more information on a command.
 ```
