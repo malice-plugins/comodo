@@ -51,28 +51,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:4429b79947e9af3ccf562cdde4ca61934c7e229726a5afd6527151a91f636a5d"
-  name = "github.com/mailru/easyjson"
-  packages = [
-    ".",
-    "buffer",
-    "jlexer",
-    "jwriter",
-  ]
-  pruneopts = "UT"
-  revision = "d5012789d6659eeed305f54c1b1542e7b65829e6"
-
-[[projects]]
-  branch = "master"
-  digest = "1:525dab0e1b29b34a5fb31695c41c004b7ce9ca83cf9c9247417236a7ddb37e98"
-  name = "github.com/malice-plugins/go-plugin-utils"
+  digest = "1:620c58b0738a5d3e35a29df0b1cc63f776ec41833bab422401d1395e813391a9"
+  name = "github.com/malice-plugins/pkgs"
   packages = [
     "database",
-    "database/elasticsearch",
     "utils",
   ]
   pruneopts = "UT"
-  revision = "7663d6b3aa7fe4667f78de3e5ea8951566817682"
+  revision = "8b60ba5208b1f40281d09751d83dafd0e7db6e15"
 
 [[projects]]
   branch = "master"
@@ -81,18 +67,6 @@
   packages = ["."]
   pruneopts = "UT"
   revision = "9ac6cf4d929b2fa8fd2d2e6dec5bb0feb4f4911d"
-
-[[projects]]
-  digest = "1:d2997d9a773171df32642730331692fdf3f98fc51911067b708f92cfdc55708b"
-  name = "github.com/olivere/elastic"
-  packages = [
-    ".",
-    "config",
-    "uritemplates",
-  ]
-  pruneopts = "UT"
-  revision = "e1da71ef4bb6941f2051f5cc1c4d3e56b1978cf3"
-  version = "v6.1.26"
 
 [[projects]]
   digest = "1:d776f3e95774a8719f2e57fabbbb33103035fe072dcf6f1864f33abd17b753e5"
@@ -124,29 +98,29 @@
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
   pruneopts = "UT"
-  revision = "c126467f60eb25f8f27e5a981f32a87e3965053f"
+  revision = "182538f80094b6a8efaade63a8fd8e0d9d5843dd"
 
 [[projects]]
   branch = "master"
-  digest = "1:af2bc8584f04302248186214c73d05637fd5718eb9f7d67a82f2efd75c89be45"
+  digest = "1:a412caf33b5d3c7938c28e1e745c10664bd180277b73ab3b34c0c467886f9969"
   name = "golang.org/x/net"
   packages = [
     "idna",
     "publicsuffix",
   ]
   pruneopts = "UT"
-  revision = "3673e40ba22529d22c3fd7c93e97b0ce50fa7bdd"
+  revision = "8a410e7b638dca158bf9e766925842f6651ff828"
 
 [[projects]]
   branch = "master"
-  digest = "1:8742e6e73627b2877c3f723bc1823d5667ec59011242480309dc90fa862512aa"
+  digest = "1:629034aef6b53eb8ea737e6d82cb5402907e2757fbab5ddf5e74c08b4c6473af"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "bd9dbc187b6e1dacfdd2722a87e83093c2d7bd6e"
+  revision = "fa5fdf94c78965f1aa8423f0cc50b8b8d728b05a"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
@@ -179,9 +153,8 @@
     "github.com/fatih/structs",
     "github.com/gorilla/mux",
     "github.com/levigross/grequests",
-    "github.com/malice-plugins/go-plugin-utils/database",
-    "github.com/malice-plugins/go-plugin-utils/database/elasticsearch",
-    "github.com/malice-plugins/go-plugin-utils/utils",
+    "github.com/malice-plugins/pkgs/database",
+    "github.com/malice-plugins/pkgs/utils",
     "github.com/parnurzeal/gorequest",
     "github.com/pkg/errors",
     "github.com/urfave/cli",

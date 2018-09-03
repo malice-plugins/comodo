@@ -1,25 +1,29 @@
-# comodo
+# malice-comodo
 
-[![Circle CI](https://circleci.com/gh/malice-plugins/comodo.png?style=shield)](https://circleci.com/gh/malice-plugins/comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker%20image-721MB-blue.svg)](https://hub.docker.com/r/malice/comodo/)
+[![Circle CI](https://circleci.com/gh/malice-plugins/comodo.png?style=shield)](https://circleci.com/gh/malice-plugins/comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker%20image-730MB-blue.svg)](https://hub.docker.com/r/malice/comodo/)
 
-This repository contains a **Dockerfile** of [comodo](https://www.comodo.com) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/malice/comodo/) published to the public [DockerHub](https://index.docker.io/).
+Malice Comodo AntiVirus Plugin
+
+> This repository contains a **Dockerfile** of [comodo](https://www.comodo.com) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/malice/comodo/) published to the public [DockerHub](https://index.docker.io/).
+
+---
 
 ### Dependencies
 
 - [ubuntu:precise (_104 MB_\)](https://store.docker.com/images/ubuntu)
 
-### Installation
+## Installation
 
-1.  Install [Docker](https://www.docker.io/).
-2.  Download [trusted build](https://hub.docker.com/r/malice/comodo/) from public [DockerHub](https://hub.docker.com): `docker pull malice/comodo`
+1. Install [Docker](https://www.docker.io/).
+2. Download [trusted build](https://hub.docker.com/r/malice/comodo/) from public [DockerHub](https://hub.docker.com): `docker pull malice/comodo`
 
-### Usage
+## Usage
 
 ```
 docker run --rm malice/comodo EICAR
 ```
 
-#### Or link your own malware folder:
+### Or link your own malware folder:
 
 ```bash
 $ docker run --rm -v /path/to/malware:/malware:ro malice/comodo FILE

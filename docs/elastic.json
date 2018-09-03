@@ -1,5 +1,5 @@
 {
-  "took": 222,
+  "took": 49,
   "timed_out": false,
   "_shards": {
     "total": 1,
@@ -8,13 +8,13 @@
     "failed": 0
   },
   "hits": {
-    "total": 1,
+    "total": 2,
     "max_score": 1,
     "hits": [
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "qNRv5GQBRcKEyoQW6VOd",
+        "_id": "SiYInWUB9VgRMYVHW0Wd",
         "_score": 1,
         "_source": {
           "plugins": {
@@ -22,13 +22,33 @@
               "comodo": {
                 "engine": "1.1",
                 "infected": true,
-                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Backdoor.Win32.Lecna.AB | 1.1 | 20180729 |\n",
+                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Backdoor.Win32.Lecna.AB | 1.1 | 20180903 |\n",
                 "result": "Backdoor.Win32.Lecna.AB",
-                "updated": "20180729"
+                "updated": "20180903"
               }
             }
           },
-          "scan_date": "2018-07-29T05:08:16.917729474Z"
+          "scan_date": "2018-09-03T01:24:55.312860678Z"
+        }
+      },
+      {
+        "_index": "malice",
+        "_type": "samples",
+        "_id": "SyYInWUB9VgRMYVHaEWO",
+        "_score": 1,
+        "_source": {
+          "plugins": {
+            "av": {
+              "comodo": {
+                "engine": "1.1",
+                "infected": false,
+                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| false |  | 1.1 | 20180903 |\n",
+                "result": "",
+                "updated": "20180903"
+              }
+            }
+          },
+          "scan_date": "2018-09-03T01:24:58.634797728Z"
         }
       }
     ]
