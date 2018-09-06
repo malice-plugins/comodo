@@ -51,10 +51,24 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:620c58b0738a5d3e35a29df0b1cc63f776ec41833bab422401d1395e813391a9"
+  digest = "1:aa3d8d42865c42626b5c1add193692d045b3188b1479f0a0a88690d21fe20083"
+  name = "github.com/mailru/easyjson"
+  packages = [
+    ".",
+    "buffer",
+    "jlexer",
+    "jwriter",
+  ]
+  pruneopts = "UT"
+  revision = "60711f1a8329503b04e1c88535f419d0bb440bff"
+
+[[projects]]
+  branch = "master"
+  digest = "1:1d495dace08d0462cac180cd80ffb8712bdedf7ce4a01898c7d332b5dcc27c35"
   name = "github.com/malice-plugins/pkgs"
   packages = [
     "database",
+    "database/elasticsearch",
     "utils",
   ]
   pruneopts = "UT"
@@ -67,6 +81,18 @@
   packages = ["."]
   pruneopts = "UT"
   revision = "9ac6cf4d929b2fa8fd2d2e6dec5bb0feb4f4911d"
+
+[[projects]]
+  digest = "1:ea301a49a83512e674c6bb188c846d2b023166c8ab439c9e63a1adbffe148b88"
+  name = "github.com/olivere/elastic"
+  packages = [
+    ".",
+    "config",
+    "uritemplates",
+  ]
+  pruneopts = "UT"
+  revision = "e6cae211ee802eab70248a68fe2cb03b616744c9"
+  version = "v6.2.5"
 
 [[projects]]
   digest = "1:d776f3e95774a8719f2e57fabbbb33103035fe072dcf6f1864f33abd17b753e5"
@@ -98,7 +124,7 @@
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
   pruneopts = "UT"
-  revision = "182538f80094b6a8efaade63a8fd8e0d9d5843dd"
+  revision = "0709b304e793a5edb4a2c0145f281ecdc20838a4"
 
 [[projects]]
   branch = "master"
@@ -113,14 +139,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:629034aef6b53eb8ea737e6d82cb5402907e2757fbab5ddf5e74c08b4c6473af"
+  digest = "1:7f4a61b989d94774dc61016b660cf8347f59eb0bed91a10b2f23fc72a38d45d4"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "fa5fdf94c78965f1aa8423f0cc50b8b8d728b05a"
+  revision = "ebe1bf3edb3325c393447059974de898d5133eb8"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
@@ -154,6 +180,7 @@
     "github.com/gorilla/mux",
     "github.com/levigross/grequests",
     "github.com/malice-plugins/pkgs/database",
+    "github.com/malice-plugins/pkgs/database/elasticsearch",
     "github.com/malice-plugins/pkgs/utils",
     "github.com/parnurzeal/gorequest",
     "github.com/pkg/errors",
