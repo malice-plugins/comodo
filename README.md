@@ -1,6 +1,6 @@
 # malice-comodo
 
-[![Circle CI](https://circleci.com/gh/malice-plugins/comodo.png?style=shield)](https://circleci.com/gh/malice-plugins/comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker%20image-730MB-blue.svg)](https://hub.docker.com/r/malice/comodo/)
+[![Circle CI](https://circleci.com/gh/malice-plugins/comodo.png?style=shield)](https://circleci.com/gh/malice-plugins/comodo) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/comodo.svg)](https://hub.docker.com/r/malice/comodo/) [![Docker Image](https://img.shields.io/badge/docker%20image-717MB-blue.svg)](https://hub.docker.com/r/malice/comodo/)
 
 Malice Comodo AntiVirus Plugin
 
