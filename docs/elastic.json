@@ -1,5 +1,5 @@
 {
-  "took": 49,
+  "took": 44,
   "timed_out": false,
   "_shards": {
     "total": 1,
@@ -14,7 +14,7 @@
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "SiYInWUB9VgRMYVHW0Wd",
+        "_id": "O2SurGUBE3nhAJtMcuko",
         "_score": 1,
         "_source": {
           "plugins": {
@@ -22,19 +22,19 @@
               "comodo": {
                 "engine": "1.1",
                 "infected": true,
-                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Backdoor.Win32.Lecna.AB | 1.1 | 20180903 |\n",
+                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Backdoor.Win32.Lecna.AB | 1.1 | 20180906 |\n",
                 "result": "Backdoor.Win32.Lecna.AB",
-                "updated": "20180903"
+                "updated": "20180906"
               }
             }
           },
-          "scan_date": "2018-09-03T01:24:55.312860678Z"
+          "scan_date": "2018-09-06T02:20:38.298174995Z"
         }
       },
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "SyYInWUB9VgRMYVHaEWO",
+        "_id": "PGSurGUBE3nhAJtMfunG",
         "_score": 1,
         "_source": {
           "plugins": {
@@ -42,13 +42,13 @@
               "comodo": {
                 "engine": "1.1",
                 "infected": false,
-                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| false |  | 1.1 | 20180903 |\n",
+                "markdown": "#### Comodo\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| false |  | 1.1 | 20180906 |\n",
                 "result": "",
-                "updated": "20180903"
+                "updated": "20180906"
               }
             }
           },
-          "scan_date": "2018-09-03T01:24:58.634797728Z"
+          "scan_date": "2018-09-06T02:20:41.539135173Z"
         }
       }
     ]

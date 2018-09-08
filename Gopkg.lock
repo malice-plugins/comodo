@@ -135,18 +135,18 @@
     "publicsuffix",
   ]
   pruneopts = "UT"
-  revision = "8a410e7b638dca158bf9e766925842f6651ff828"
+  revision = "161cd47e91fd58ac17490ef4d742dc98bb4cf60e"
 
 [[projects]]
   branch = "master"
-  digest = "1:7f4a61b989d94774dc61016b660cf8347f59eb0bed91a10b2f23fc72a38d45d4"
+  digest = "1:0ed1788dc3845fa86e9ade2183538e920adf76fb9f8760e69236fa2cb0d7c9d9"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "ebe1bf3edb3325c393447059974de898d5133eb8"
+  revision = "917fdcba135dcbaccd57425db91723541b4427c8"
 
 [[projects]]
   digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"

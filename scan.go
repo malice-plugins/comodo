@@ -61,6 +61,16 @@ type ResultsData struct {
 	MarkDown string `json:"markdown,omitempty" structs:"markdown,omitempty"`
 }
 
+func assert(err error) {
+	if err != nil {
+		log.WithFields(log.Fields{
+			"plugin":   name,
+			"category": category,
+			"path":     path,
+		}).Fatal(err)
+	}
+}
+
 // AvScan performs antivirus scan
 func AvScan(path string, timeout int) Comodo {
 
@@ -68,7 +78,7 @@ func AvScan(path string, timeout int) Comodo {
 	defer cancel()
 
 	output, err := utils.RunCommand(ctx, "/opt/COMODO/cmdscan", "-vs", path)
-	utils.Assert(err)
+	assert(err)
 
 	return Comodo{
 		Results: ParseComodoOutput(output),
@@ -138,7 +148,7 @@ func getUpdatedDate() string {
 		return BuildTime
 	}
 	updated, err := ioutil.ReadFile("/opt/malice/UPDATED")
-	utils.Assert(err)
+	assert(err)
 	return string(updated)
 }
 
@@ -192,7 +202,7 @@ func webAvScan(w http.ResponseWriter, r *http.Request) {
 	defer os.Remove(tmpfile.Name()) // clean up
 
 	data, err := ioutil.ReadAll(file)
-	utils.Assert(err)
+	assert(err)
 
 	if _, err = tmpfile.Write(data); err != nil {
 		log.Fatal(err)
@@ -281,10 +291,10 @@ func main() {
 
 		if c.Args().Present() {
 			path, err := filepath.Abs(c.Args().First())
-			utils.Assert(err)
+			assert(err)
 
 			if _, err := os.Stat(path); os.IsNotExist(err) {
-				utils.Assert(err)
+				assert(err)
 			}
 
 			comodo := AvScan(path, c.Int("timeout"))
@@ -312,7 +322,7 @@ func main() {
 			} else {
 				comodo.Results.MarkDown = ""
 				avgJSON, err := json.Marshal(comodo)
-				utils.Assert(err)
+				assert(err)
 				if c.Bool("callback") {
 					request := gorequest.New()
 					if c.Bool("proxy") {
@@ -334,5 +344,5 @@ func main() {
 	}
 
 	err := app.Run(os.Args)
-	utils.Assert(err)
+	assert(err)
 }
