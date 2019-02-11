@@ -88,7 +88,7 @@ func AvScan(path string, timeout int) Comodo {
 // ParseComodoOutput convert comodo output into ResultsData struct
 func ParseComodoOutput(comodoout string) ResultsData {
 
-	comodo := ResultsData{Infected: false, Engine: "1.1", Updated: getUpdatedDate()}
+	comodo := ResultsData{Infected: false, Engine: getComodoVersion(), Updated: getUpdatedDate()}
 
 	log.Debug("comodoout: ", comodoout)
 
@@ -141,6 +141,21 @@ func updateAV() error {
 	t := time.Now().Format("20060102")
 	err = ioutil.WriteFile("/opt/malice/UPDATED", []byte(t), 0644)
 	return err
+}
+
+func getComodoVersion() string {
+	versionOut, err := utils.RunCommand(nil, "/bin/cat", "/opt/COMODO/etc/COMODO.xml")
+	assert(err)
+
+	log.Debug("Comodo Version: ", versionOut)
+	for _, line := range strings.Split(versionOut, "\n") {
+		if len(line) != 0 {
+			if strings.Contains(line, "<ProductVersion>") {
+				return strings.TrimSpace(strings.TrimSuffix(strings.TrimPrefix(line, "<ProductVersion>"), "</ProductVersion>"))
+			}
+		}
+	}
+	return "error"
 }
 
 func getUpdatedDate() string {
