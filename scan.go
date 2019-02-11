@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -144,15 +145,17 @@ func updateAV() error {
 }
 
 func getComodoVersion() string {
-	versionOut, err := utils.RunCommand(nil, "/bin/cat", "/opt/COMODO/etc/COMODO.xml")
+	file, err := os.Open("/opt/COMODO/etc/COMODO.xml")
 	assert(err)
+	defer file.Close()
 
-	log.Debug("Comodo Version: ", versionOut)
-	for _, line := range strings.Split(versionOut, "\n") {
-		if len(line) != 0 {
-			if strings.Contains(line, "<ProductVersion>") {
-				return strings.TrimSpace(strings.TrimSuffix(strings.TrimPrefix(line, "<ProductVersion>"), "</ProductVersion>"))
-			}
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		if strings.Contains(line, "<ProductVersion>") {
+			versionOut := strings.TrimSpace(strings.Replace(strings.Replace(line, "<ProductVersion>", "", 1), "</ProductVersion>", "", 1))
+			log.Debug("Comodo Version: ", versionOut)
+			return versionOut
 		}
 	}
 	return "error"
