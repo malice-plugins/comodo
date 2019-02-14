@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -88,7 +89,7 @@ func AvScan(path string, timeout int) Comodo {
 // ParseComodoOutput convert comodo output into ResultsData struct
 func ParseComodoOutput(comodoout string) ResultsData {
 
-	comodo := ResultsData{Infected: false, Engine: "1.1", Updated: getUpdatedDate()}
+	comodo := ResultsData{Infected: false, Engine: getComodoVersion(), Updated: getUpdatedDate()}
 
 	log.Debug("comodoout: ", comodoout)
 
@@ -141,6 +142,23 @@ func updateAV() error {
 	t := time.Now().Format("20060102")
 	err = ioutil.WriteFile("/opt/malice/UPDATED", []byte(t), 0644)
 	return err
+}
+
+func getComodoVersion() string {
+	file, err := os.Open("/opt/COMODO/etc/COMODO.xml")
+	assert(err)
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		if strings.Contains(line, "<ProductVersion>") {
+			versionOut := strings.TrimSpace(strings.Replace(strings.Replace(line, "<ProductVersion>", "", 1), "</ProductVersion>", "", 1))
+			log.Debug("Comodo Version: ", versionOut)
+			return versionOut
+		}
+	}
+	return "error"
 }
 
 func getUpdatedDate() string {
