@@ -4,7 +4,7 @@
 $ docker run --name=comodo malice/comodo update
 ```
 
-## Then to use the updated AVG container:
+## Then to use the updated Comodo container:
 
 ```bash
 $ docker commit comodo malice/comodo:updated
